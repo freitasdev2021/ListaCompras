@@ -1,20 +1,151 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<div class="app">
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <!-- HEADER -->
+    <header class="header">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+        <div class="header-top">
+
+            <div class="header-info">
+                <small>Olá, seja bem-vindo</small>
+                <h1>Minhas Compras</h1>
+            </div>
+
+            <div class="header-icon">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- CONTEÚDO -->
+    <main class="content">
+
+        <div class="section-title">
+            O que você deseja fazer?
+        </div>
+
+
+        <!-- MENU -->
+        <div class="menu-grid">
+
+            <!-- Compras -->
+            <button class="menu-card">
+
+                <div class="menu-icon green">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </div>
+
+                <h2>Ver minhas compras</h2>
+                <p>Acompanhe suas compras</p>
+
+                <span class="arrow">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </span>
+
+            </button>
+
+
+            <!-- Adicionar compra -->
+            <button class="menu-card">
+
+                <div class="menu-icon blue">
+                    <i class="fa-solid fa-cart-plus"></i>
+                </div>
+
+                <h2>Adicionar compra</h2>
+                <p>Cadastre uma nova compra</p>
+
+                <span class="arrow">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </span>
+
+            </button>
+
+
+            <!-- Adicionar item -->
+            <button class="menu-card">
+
+                <div class="menu-icon orange">
+                    <i class="fa-solid fa-box-open"></i>
+                </div>
+
+                <h2>Adicionar item</h2>
+                <p>Inclua um novo produto</p>
+
+                <span class="arrow">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </span>
+
+            </button>
+
+
+            <!-- Relatórios -->
+            <button class="menu-card">
+
+                <div class="menu-icon purple">
+                    <i class="fa-solid fa-chart-column"></i>
+                </div>
+
+                <h2>Ver relatórios</h2>
+                <p>Consulte informações</p>
+
+                <span class="arrow">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </span>
+
+            </button>
+
+
+            <!-- Dar baixa -->
+            <button class="menu-card">
+
+                <div class="menu-icon red">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+
+                <h2>Dar baixa em item</h2>
+                <p>Registre a utilização</p>
+
+                <span class="arrow">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </span>
+
+            </button>
+
+        </div>
+
+
+        <!-- RESUMO -->
+        <div class="summary">
+
+            <div class="summary-title">
+                <strong>Resumo</strong>
+                <i class="fa-solid fa-chart-simple"></i>
+            </div>
+
+            <div class="summary-content">
+
+                <div class="summary-item">
+                    <strong>12</strong>
+                    <span>Compras</span>
+                </div>
+
+                <div class="summary-item">
+                    <strong>48</strong>
+                    <span>Itens</span>
+                </div>
+
+                <div class="summary-item">
+                    <strong>7</strong>
+                    <span>Pendentes</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
