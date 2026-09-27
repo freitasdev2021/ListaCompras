@@ -46,26 +46,8 @@
 
             </button>
 
-
-            <!-- Adicionar compra -->
-            <button class="menu-card">
-
-                <div class="menu-icon blue">
-                    <i class="fa-solid fa-cart-plus"></i>
-                </div>
-
-                <h2>Adicionar compra</h2>
-                <p>Cadastre uma nova compra</p>
-
-                <span class="arrow">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </span>
-
-            </button>
-
-
             <!-- Adicionar item -->
-            <button class="menu-card">
+            <button class="menu-card" [routerLink]="['/novo-item']">
 
                 <div class="menu-icon orange">
                     <i class="fa-solid fa-box-open"></i>
@@ -82,7 +64,7 @@
 
 
             <!-- Relatórios -->
-            <button class="menu-card">
+            <button class="menu-card" [routerLink]="['/relatorios']">
 
                 <div class="menu-icon purple">
                     <i class="fa-solid fa-chart-column"></i>
@@ -99,7 +81,7 @@
 
 
             <!-- Dar baixa -->
-            <button class="menu-card">
+            <button class="menu-card" [routerLink]="['/baixa-item']">
 
                 <div class="menu-icon red">
                     <i class="fa-solid fa-circle-check"></i>
