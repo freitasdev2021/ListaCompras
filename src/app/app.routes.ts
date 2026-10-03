@@ -30,4 +30,8 @@ export const routes: Routes = [
     path: 'adicionar-compras',
     loadComponent: () => import('./adicionar-compras/adicionar-compras.page').then( m => m.AdicionarComprasPage)
   },
+  {
+    path: 'itens-lista-compras',
+    loadComponent: () => import('./itens-lista-compras/itens-lista-compras.page').then( m => m.ItensListaComprasPage)
+  },
 ];
