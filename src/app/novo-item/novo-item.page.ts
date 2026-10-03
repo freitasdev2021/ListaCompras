@@ -1,20 +1,251 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular';
+import { IonContent, IonHeader, IonSearchbar,IonTitle, IonToolbar,IonItem,IonList,IonInput,IonLabel,IonText,IonSelect,IonModal,IonSelectOption,IonButton } from '@ionic/angular';
 import { InternoComponent } from '../interno/interno.component';
 
 @Component({
   selector: 'app-novo-item',
   templateUrl: './novo-item.page.html',
   styleUrls: ['./novo-item.page.scss'],
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule,InternoComponent]
+  imports: [IonContent, IonHeader, IonTitle, IonSearchbar,IonToolbar,IonText,CommonModule,IonModal,IonLabel, FormsModule,InternoComponent,IonItem,IonList,IonInput,IonSelect,IonSelectOption,IonButton]
 })
 export class NovoItemPage implements OnInit {
+
+  itens = [
+    { "id": 1, "nome": "Arroz" },
+    { "id": 2, "nome": "Feijão" },
+    { "id": 3, "nome": "Macarrão" },
+    { "id": 4, "nome": "Açúcar" },
+    { "id": 5, "nome": "Sal" },
+    { "id": 6, "nome": "Café" },
+    { "id": 7, "nome": "Leite" },
+    { "id": 8, "nome": "Pão" },
+    { "id": 9, "nome": "Ovos" },
+    { "id": 10, "nome": "Manteiga" },
+    { "id": 11, "nome": "Margarina" },
+    { "id": 12, "nome": "Queijo" },
+    { "id": 13, "nome": "Presunto" },
+    { "id": 14, "nome": "Mortadela" },
+    { "id": 15, "nome": "Peito de Frango" },
+    { "id": 16, "nome": "Carne Bovina" },
+    { "id": 17, "nome": "Carne Suína" },
+    { "id": 18, "nome": "Linguiça" },
+    { "id": 19, "nome": "Salsicha" },
+    { "id": 20, "nome": "Bacon" },
+    { "id": 21, "nome": "Peixe" },
+    { "id": 22, "nome": "Atum" },
+    { "id": 23, "nome": "Sardinha" },
+    { "id": 24, "nome": "Batata" },
+    { "id": 25, "nome": "Batata Doce" },
+    { "id": 26, "nome": "Cebola" },
+    { "id": 27, "nome": "Alho" },
+    { "id": 28, "nome": "Tomate" },
+    { "id": 29, "nome": "Cenoura" },
+    { "id": 30, "nome": "Beterraba" },
+    { "id": 31, "nome": "Abobrinha" },
+    { "id": 32, "nome": "Berinjela" },
+    { "id": 33, "nome": "Pepino" },
+    { "id": 34, "nome": "Pimentão" },
+    { "id": 35, "nome": "Alface" },
+    { "id": 36, "nome": "Rúcula" },
+    { "id": 37, "nome": "Couve" },
+    { "id": 38, "nome": "Brócolis" },
+    { "id": 39, "nome": "Couve-flor" },
+    { "id": 40, "nome": "Repolho" },
+    { "id": 41, "nome": "Espinafre" },
+    { "id": 42, "nome": "Chuchu" },
+    { "id": 43, "nome": "Abóbora" },
+    { "id": 44, "nome": "Milho" },
+    { "id": 45, "nome": "Ervilha" },
+    { "id": 46, "nome": "Vagem" },
+    { "id": 47, "nome": "Mandioquinha" },
+    { "id": 48, "nome": "Mandioca" },
+    { "id": 49, "nome": "Inhame" },
+    { "id": 50, "nome": "Cará" },
+    { "id": 51, "nome": "Banana" },
+    { "id": 52, "nome": "Maçã" },
+    { "id": 53, "nome": "Laranja" },
+    { "id": 54, "nome": "Limão" },
+    { "id": 55, "nome": "Mamão" },
+    { "id": 56, "nome": "Manga" },
+    { "id": 57, "nome": "Abacaxi" },
+    { "id": 58, "nome": "Melancia" },
+    { "id": 59, "nome": "Melão" },
+    { "id": 60, "nome": "Uva" },
+    { "id": 61, "nome": "Morango" },
+    { "id": 62, "nome": "Pera" },
+    { "id": 63, "nome": "Pêssego" },
+    { "id": 64, "nome": "Ameixa" },
+    { "id": 65, "nome": "Kiwi" },
+    { "id": 66, "nome": "Goiaba" },
+    { "id": 67, "nome": "Maracujá" },
+    { "id": 68, "nome": "Caju" },
+    { "id": 69, "nome": "Acerola" },
+    { "id": 70, "nome": "Coco" },
+    { "id": 71, "nome": "Abacate" },
+    { "id": 72, "nome": "Caqui" },
+    { "id": 73, "nome": "Figo" },
+    { "id": 74, "nome": "Romã" },
+    { "id": 75, "nome": "Pitanga" },
+    { "id": 76, "nome": "Chocolate" },
+    { "id": 77, "nome": "Chocolate ao Leite" },
+    { "id": 78, "nome": "Chocolate Amargo" },
+    { "id": 79, "nome": "Chocolate Branco" },
+    { "id": 80, "nome": "Biscoito" },
+    { "id": 81, "nome": "Bolacha Recheada" },
+    { "id": 82, "nome": "Wafer" },
+    { "id": 83, "nome": "Bolo" },
+    { "id": 84, "nome": "Torrada" },
+    { "id": 85, "nome": "Cereal" },
+    { "id": 86, "nome": "Granola" },
+    { "id": 87, "nome": "Aveia" },
+    { "id": 88, "nome": "Mel" },
+    { "id": 89, "nome": "Geleia" },
+    { "id": 90, "nome": "Doce de Leite" },
+    { "id": 91, "nome": "Sorvete" },
+    { "id": 92, "nome": "Pudim" },
+    { "id": 93, "nome": "Gelatina" },
+    { "id": 94, "nome": "Pipoca" },
+    { "id": 95, "nome": "Salgadinho" },
+    { "id": 96, "nome": "Amendoim" },
+    { "id": 97, "nome": "Castanha" },
+    { "id": 98, "nome": "Nozes" },
+    { "id": 99, "nome": "Amêndoas" },
+    { "id": 100, "nome": "Refrigerante" },
+    { "id": 101, "nome": "Refrigerante Cola" },
+    { "id": 102, "nome": "Refrigerante Guaraná" },
+    { "id": 103, "nome": "Refrigerante Laranja" },
+    { "id": 104, "nome": "Suco de Laranja" },
+    { "id": 105, "nome": "Suco de Uva" },
+    { "id": 106, "nome": "Suco de Maracujá" },
+    { "id": 107, "nome": "Água Mineral" },
+    { "id": 108, "nome": "Água com Gás" },
+    { "id": 109, "nome": "Cerveja" },
+    { "id": 110, "nome": "Vinho" },
+    { "id": 111, "nome": "Cachaça" },
+    { "id": 112, "nome": "Whisky" },
+    { "id": 113, "nome": "Vodka" },
+    { "id": 114, "nome": "Energético" },
+    { "id": 115, "nome": "Isotônico" },
+    { "id": 116, "nome": "Chá" },
+    { "id": 117, "nome": "Achocolatado" },
+    { "id": 118, "nome": "Leite Condensado" },
+    { "id": 119, "nome": "Creme de Leite" },
+    { "id": 120, "nome": "Iogurte" },
+    { "id": 121, "nome": "Requeijão" },
+    { "id": 122, "nome": "Ricota" },
+    { "id": 123, "nome": "Cottage" },
+    { "id": 124, "nome": "Mussarela" },
+    { "id": 125, "nome": "Parmesão" },
+    { "id": 126, "nome": "Prato" },
+    { "id": 127, "nome": "Gorgonzola" },
+    { "id": 128, "nome": "Provolone" },
+    { "id": 129, "nome": "Óleo de Soja" },
+    { "id": 130, "nome": "Azeite" },
+    { "id": 131, "nome": "Vinagre" },
+    { "id": 132, "nome": "Molho de Tomate" },
+    { "id": 133, "nome": "Extrato de Tomate" },
+    { "id": 134, "nome": "Ketchup" },
+    { "id": 135, "nome": "Mostarda" },
+    { "id": 136, "nome": "Maionese" },
+    { "id": 137, "nome": "Molho Inglês" },
+    { "id": 138, "nome": "Molho de Pimenta" },
+    { "id": 139, "nome": "Shoyu" },
+    { "id": 140, "nome": "Caldo de Carne" },
+    { "id": 141, "nome": "Caldo de Galinha" },
+    { "id": 142, "nome": "Tempero" },
+    { "id": 143, "nome": "Orégano" },
+    { "id": 144, "nome": "Manjericão" },
+    { "id": 145, "nome": "Salsinha" },
+    { "id": 146, "nome": "Cebolinha" },
+    { "id": 147, "nome": "Coentro" },
+    { "id": 148, "nome": "Louro" },
+    { "id": 149, "nome": "Canela" },
+    { "id": 150, "nome": "Cravo" },
+    { "id": 151, "nome": "Pimenta-do-Reino" },
+    { "id": 152, "nome": "Colorau" },
+    { "id": 153, "nome": "Açafrão" },
+    { "id": 154, "nome": "Gengibre" },
+    { "id": 155, "nome": "Noz-moscada" },
+    { "id": 156, "nome": "Farinha de Trigo" },
+    { "id": 157, "nome": "Farinha de Mandioca" },
+    { "id": 158, "nome": "Farinha de Milho" },
+    { "id": 159, "nome": "Fubá" },
+    { "id": 160, "nome": "Amido de Milho" },
+    { "id": 161, "nome": "Fermento" },
+    { "id": 162, "nome": "Bicarbonato" },
+    { "id": 163, "nome": "Leite em Pó" },
+    { "id": 164, "nome": "Café em Pó" },
+    { "id": 165, "nome": "Café Solúvel" },
+    { "id": 166, "nome": "Capuccino" },
+    { "id": 167, "nome": "Adoçante" },
+    { "id": 168, "nome": "Sabonete" },
+    { "id": 169, "nome": "Shampoo" },
+    { "id": 170, "nome": "Condicionador" },
+    { "id": 171, "nome": "Creme Dental" },
+    { "id": 172, "nome": "Escova de Dentes" },
+    { "id": 173, "nome": "Fio Dental" },
+    { "id": 174, "nome": "Desodorante" },
+    { "id": 175, "nome": "Papel Higiênico" },
+    { "id": 176, "nome": "Absorvente" },
+    { "id": 177, "nome": "Fralda" },
+    { "id": 178, "nome": "Lenço Umedecido" },
+    { "id": 179, "nome": "Sabão em Pó" },
+    { "id": 180, "nome": "Sabão Líquido" },
+    { "id": 181, "nome": "Amaciante" },
+    { "id": 182, "nome": "Detergente" },
+    { "id": 183, "nome": "Desinfetante" },
+    { "id": 184, "nome": "Água Sanitária" },
+    { "id": 185, "nome": "Esponja" },
+    { "id": 186, "nome": "Saco de Lixo" },
+    { "id": 187, "nome": "Papel Toalha" },
+    { "id": 188, "nome": "Guardanapo" },
+    { "id": 189, "nome": "Alumínio" },
+    { "id": 190, "nome": "Filme Plástico" },
+    { "id": 191, "nome": "Palito de Dente" },
+    { "id": 192, "nome": "Cotonete" },
+    { "id": 193, "nome": "Algodão" },
+    { "id": 194, "nome": "Álcool" },
+    { "id": 195, "nome": "Hipoclorito" },
+    { "id": 196, "nome": "Vela" },
+    { "id": 197, "nome": "Fósforo" },
+    { "id": 198, "nome": "Isqueiro" },
+    { "id": 199, "nome": "Pilha" },
+    { "id": 200, "nome": "Lâmpada" }
+  ]
+
+  // Lista auxiliar que será alterada na digitação
+  itensFiltrados: any[] = [];
+
+  // Guarda o objeto selecionado pelo usuário
+  itemSelecionado: any = null;
 
   constructor() { }
 
   ngOnInit() {
+    this.itensFiltrados = [...this.itens];
+  }
+
+  // Função disparada a cada letra digitada na barra de pesquisa
+  filtrarItens(event: any) {
+    const valorBusca = event.target.value.toLowerCase();
+
+    if (!valorBusca.trim()) {
+      this.itensFiltrados = [...this.itens];
+      return;
+    }
+
+    // Filtra comparando o nome do item com o que foi digitado
+    this.itensFiltrados = this.itens.filter(item => {
+      return item.nome.toLowerCase().includes(valorBusca);
+    });
+  }
+
+  // Função executada ao clicar em uma opção
+  selecionarItem(item: any, modal: any) {
+    this.itemSelecionado = item; // Salva o item escolhido
+    modal.dismiss();             // Fecha o modal automaticamente
   }
 
 }

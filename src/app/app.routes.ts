@@ -26,4 +26,8 @@ export const routes: Routes = [
     path: 'baixa-item',
     loadComponent: () => import('./baixa-item/baixa-item.page').then( m => m.BaixaItemPage)
   },
+  {
+    path: 'adicionar-compras',
+    loadComponent: () => import('./adicionar-compras/adicionar-compras.page').then( m => m.AdicionarComprasPage)
+  },
 ];
