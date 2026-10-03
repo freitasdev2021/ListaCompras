@@ -1,522 +1,115 @@
-  * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-  }
-
-  body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-                    Helvetica, Arial, sans-serif;
-      background: #f4f7fb;
-      color: #1e293b;
-      min-height: 100vh;
-  }
-
-  .app {
-      width: 100%;
-      max-width: 520px;
-      min-height: 100vh;
-      margin: 0 auto;
-      background: #f4f7fb;
-      padding-bottom: 30px;
-      overflow-y:scroll;
-  }
-
-  /* HEADER */
-  .header {
-      background: linear-gradient(135deg, #166534, #15803d);
-      color: white;
-      padding: 28px 20px 32px;
-      border-radius: 0 0 28px 28px;
-      box-shadow: 0 8px 25px rgba(22, 101, 52, 0.20);
-  }
-
-  .header-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-  }
-
-  .header-info small {
-      display: block;
-      font-size: 13px;
-      opacity: .80;
-      margin-bottom: 4px;
-  }
-
-  .header-info h1 {
-      font-size: 25px;
-      font-weight: 700;
-      letter-spacing: -.5px;
-  }
-
-  .header-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 15px;
-      background: rgba(255,255,255,.15);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 21px;
-  }
-
-  /* CONTEÚDO */
-  .content {
-      padding: 22px 16px;
-  }
-
-  .section-title {
-      font-size: 17px;
-      font-weight: 700;
-      margin-bottom: 14px;
-      color: #334155;
-  }
-
-  /* GRID */
-  .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-  }
-
-  .menu-card {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      text-align: left;
-
-      min-height: 125px;
-      width: 100%;
-      padding: 20px;
-
-      appearance: none;
-      border: none;
-      border-radius: 20px;
-      background: #ffffff;
-      cursor: pointer;
-      font-family: inherit;
-
-      box-shadow: 0 5px 18px rgba(15, 23, 42, 0.07);
-
-      transition:
-          transform .18s ease,
-          box-shadow .18s ease;
-  }
-
-  .menu-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.11);
-  }
-
-  .menu-card:active {
-      transform: scale(.97);
-  }
-
-  .menu-card:last-child {
-      grid-column: 1 / -1;
-  }
-
-  .menu-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 15px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      font-size: 20px;
-      margin-bottom: 16px;
-  }
-
-  .menu-card h2 {
-      font-size: 15px;
-      line-height: 1.25;
-      color: #1e293b;
-      font-weight: 700;
-      padding-right: 8px;
-  }
-
-  .menu-card p {
-      margin-top: 5px;
-      font-size: 11px;
-      color: #94a3b8;
-  }
-
-  .arrow {
-      position: absolute;
-      right: 16px;
-      bottom: 17px;
-
-      font-size: 12px;
-      color: #cbd5e1;
-  }
-
-  /* CORES DOS ÍCONES */
-  .green {
-      background: #dcfce7;
-      color: #16a34a;
-  }
-
-  .blue {
-      background: #dbeafe;
-      color: #2563eb;
-  }
-
-  .orange {
-      background: #ffedd5;
-      color: #ea580c;
-  }
-
-  .purple {
-      background: #f3e8ff;
-      color: #9333ea;
-  }
-
-  .red {
-      background: #fee2e2;
-      color: #dc2626;
-  }
-
-  /* CARD DE RESUMO */
-  .summary {
-      margin-top: 22px;
-      background: #ffffff;
-      border-radius: 20px;
-      padding: 19px;
-      box-shadow: 0 5px 18px rgba(15, 23, 42, 0.06);
-  }
-
-  .summary-title {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 15px;
-  }
-
-  .summary-title strong {
-      font-size: 15px;
-  }
-
-  .summary-title i {
-      color: #16a34a;
-  }
-
-  .summary-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-  }
-
-  .summary-item {
-      text-align: center;
-      flex: 1;
-  }
-
-  .summary-item:not(:last-child) {
-      border-right: 1px solid #e2e8f0;
-  }
-
-  .summary-item strong {
-      display: block;
-      font-size: 21px;
-      color: #1e293b;
-  }
-
-  .summary-item span {
-      font-size: 11px;
-      color: #94a3b8;
-  }
-
-  /* MOBILE */
-  @media (max-width: 360px) {
-
-      .menu-grid {
-          grid-template-columns: repeat(1, 1fr);
-          gap: 10px;
-      }
-
-      .menu-card {
-          min-height: 135px;
-          padding: 16px;
-      }
-
-      .menu-icon {
-          width: 43px;
-          height: 43px;
-          margin-bottom: 13px;
-      }
-
-      .header {
-          padding-left: 17px;
-          padding-right: 17px;
-      }
-  }
-
-  /* DESKTOP */
-  @media (min-width: 700px) {
-      body {
-          padding: 30px 0;
-      }
-
-      .app {
-          min-height: auto;
-          border-radius: 30px;
-          overflow: hidden;
-          box-shadow: 0 15px 50px rgba(15, 23, 42, .12);
-      }
-  }
-
-.compras-lista {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+/* Configurações Globais / Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-
-/* CABEÇALHO */
-
-.compras-header {
-    display: grid;
-    grid-template-columns: 1fr auto;
-
-    padding: 0 18px 7px;
-
-    font-size: 10px;
-    font-weight: 700;
-
-    text-transform: uppercase;
-    letter-spacing: .6px;
-
-    color: #94a3b8;
+body {
+  background-color: #f4f7f6;
+  color: #333;
+  padding: 16px;
 }
 
-.compras-header span:last-child {
-    min-width: 105px;
-    text-align: right;
+.container {
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-
-/* ITEM */
-
-.compra-item {
-    --background: #ffffff;
-    --background-hover: #ffffff;
-    --background-activated: #f8fafc;
-
-    --color: #1e293b;
-
-    --padding-start: 0;
-    --padding-end: 0;
-    --padding-top: 0;
-    --padding-bottom: 0;
-
-    --border-radius: 17px;
-
-    width: 100%;
-    height: 72px;
-
-    margin: 0;
-
-    text-transform: none;
-    font-family: inherit;
+h2 {
+  margin-bottom: 16px;
+  font-size: 1.4rem;
+  color: #2c3e50;
 }
 
-
-/* PARTE NATIVA DO IONIC */
-
-.compra-item::part(native) {
-    width: 100%;
-    height: 100%;
-
-    padding: 12px 15px;
-
-    border-radius: 17px;
-
-    background: #ffffff;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    text-align: left;
-
-    box-shadow:
-        0 3px 12px rgba(15, 23, 42, .055);
-
-    transition:
-        transform .15s ease,
-        box-shadow .15s ease;
+/* Estilização da Tabela Responsiva (Mobile-First) */
+.mobile-table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
+/* 1. Transformação Completa para Mobile (Telas até 600px) */
+@media screen and (max-width: 600px) {
+  
+  /* Esconde o cabeçalho original da tabela */
+  .mobile-table thead {
+    display: none;
+  }
 
-/* TOQUE */
-
-.compra-item:active::part(native) {
-    transform: scale(.985);
-
-    box-shadow:
-        0 2px 7px rgba(15, 23, 42, .04);
-}
-
-
-/* CONTEÚDO */
-
-.compra-conteudo {
-    display: flex;
-    align-items: center;
-
-    min-width: 0;
-    flex: 1;
-}
-
-
-/* ÍCONE */
-
-.compra-icone {
-    width: 42px;
-    height: 42px;
-
-    min-width: 42px;
-
-    margin-right: 12px;
-
-    border-radius: 13px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: #dcfce7;
-    color: #16a34a;
-}
-
-.compra-icone ion-icon {
-    font-size: 20px;
-}
-
-
-/* VARIAÇÕES */
-
-.compra-icone.azul {
-    background: #dbeafe;
-    color: #2563eb;
-}
-
-.compra-icone.roxo {
-    background: #f3e8ff;
-    color: #9333ea;
-}
-
-.compra-icone.laranja {
-    background: #ffedd5;
-    color: #ea580c;
-}
-
-
-/* INFORMAÇÕES */
-
-.compra-info {
-    display: flex;
-    flex-direction: column;
-
-    min-width: 0;
-}
-
-.compra-info strong {
+  /* Transforma cada linha (tr) em um card separado */
+  .mobile-table tr {
     display: block;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border: 1px solid #e2e8f0;
+  }
 
-    max-width: 100%;
-
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-
-    font-size: 14px;
-    line-height: 1.3;
-
-    font-weight: 650;
-
-    color: #1e293b;
-}
-
-.compra-info small {
-    margin-top: 4px;
-
-    font-size: 11px;
-
-    color: #94a3b8;
-}
-
-
-/* VALOR */
-
-.compra-valor {
-    min-width: 105px;
-
-    margin-left: 10px;
-
+  /* Transforma cada célula (td) em uma linha interna do card */
+  .mobile-table td {
     display: flex;
+    justify-content: space-between; /* Alinha o rótulo à esquerda e o valor à direita */
     align-items: center;
-    justify-content: flex-end;
+    padding: 8px 0;
+    font-size: 14px;
+    border-bottom: 1px dashed #edf2f7;
+  }
 
-    gap: 7px;
+  .mobile-table td:last-child {
+    border-bottom: none; /* Remove a linha pontilhada da última célula */
+  }
+
+  /* Cria o rótulo/etiqueta automaticamente usando o atributo "data-label" do HTML */
+  .mobile-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #718096;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+  }
+
+  /* Estilo de destaque apenas para o nome do produto */
+  .mobile-table td.product-name {
+    font-weight: bold;
+    color: #1a202c;
+  }
 }
 
-.compra-valor strong {
-    font-size: 13px;
+/* 2. Visual para Desktop (Caso a tela seja maior que 600px) */
+@media screen and (min-width: 601px) {
+  .mobile-table {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  }
 
-    font-weight: 700;
+  .mobile-table th, 
+  .mobile-table td {
+    padding: 14px 18px;
+    text-align: left;
+  }
 
-    color: #166534;
+  .mobile-table th {
+    background-color: #2c3e50;
+    color: #fff;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
 
-    white-space: nowrap;
-}
+  .mobile-table tr {
+    border-bottom: 1px solid #e2e8f0;
+  }
 
-.compra-valor ion-icon {
-    font-size: 15px;
+  .mobile-table tr:last-child {
+    border-bottom: none;
+  }
 
-    color: #cbd5e1;
-}
-
-
-/* CELULARES PEQUENOS */
-
-@media (max-width: 360px) {
-
-    .compras-header {
-        padding-left: 14px;
-        padding-right: 14px;
-    }
-
-    .compra-item::part(native) {
-        padding: 11px 12px;
-    }
-
-    .compra-icone {
-        width: 38px;
-        height: 38px;
-        min-width: 38px;
-
-        margin-right: 9px;
-    }
-
-    .compra-icone ion-icon {
-        font-size: 18px;
-    }
-
-    .compra-info strong {
-        font-size: 13px;
-    }
-
-    .compra-valor {
-        min-width: 90px;
-    }
-
-    .compra-valor strong {
-        font-size: 12px;
-    }
+  .mobile-table tr:nth-child(even) {
+    background-color: #f8fafc;
+  }
 }
